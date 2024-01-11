@@ -1,0 +1,36 @@
+<%- include('../partials/head') %>
+
+ <div class="imgGreninja">
+
+    <% if(erros.error){ %>
+        <div class="alert alert-danger"><%= erros.error  %></div>
+    <% } %>
+
+<div class="divRegistro">
+    <h1>Crie sua conta</h1>
+    <form action="/get/registro" method="post">
+    <div class="formRegistro">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+    
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" required >
+    
+        <label for="senha2">Confirme sua Senha:</label>
+        <input type="password" name="senha2" required>
+   
+        <div class="btnRegistro">
+            <a href=""><button type="submit" class="btnLogin">Login</button></a>
+            <a href="/"><button type="button" class="btnPinicial">Página inicial</button></a>
+            <a href="/login" class="CliqueAqui"><p>Já possui conta? Clique aqui</p></a>
+        </div>
+    </div>
+</form>
+</div>
+<div id="pokeball"><img src="/img/pokeball.png" alt=""></div>
+</div>
+
+

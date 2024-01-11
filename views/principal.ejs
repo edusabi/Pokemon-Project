@@ -1,0 +1,38 @@
+
+<%- include('partials/head') %>
+<%- include('partials/navbar') %>
+
+
+<main class="main">
+    <% if(messages.error){ %>
+        <div class="alert alert-danger"><%= messages.error  %></div>
+     <% } %>
+
+    <% if(messages.success){ %>
+        <div class="alert alert-success"><%= messages.success  %></div>
+     <% } %>
+
+     <div class="text-key">
+         <div id="txt-animado">
+            <img src="/img/pokebolaLogo.png" alt="" class="pokeMain"> <span></span>
+        </div>
+     </div>
+
+     <div class="videoYtb">
+        <iframe class="video" width="690" height="390" src="https://www.youtube.com/embed/ftR3pHZKyOE?si=_nzTL2SbC00sGMGV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+     </div>
+
+     <h1>O mundo dos pokemon bem nas palmas das suas mãos!</h1>
+     <p>Aproveite e se divirta!</p>
+
+</main>
+
+<%- include('partials/footer') %>
+
+
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/c9ae848291.js" crossorigin="anonymous"></script>
+    <script src="/js/script.js"></script>
+
+</html>
+</body>

@@ -1,0 +1,977 @@
+*{
+    padding: 0 ;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: var(--white) !important;
+
+    font-weight: bold;
+
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--red);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--black2);
+    border-radius: 20px;
+    border: 1.5px solid var(--snow);
+}
+
+.alert{
+    position: absolute;
+    color: #000 !important;
+    top: 1vh;
+    z-index: 2;
+}
+
+a {
+    text-decoration: none !important;
+  }
+
+:root{
+    --blue: #0000CD;
+    --red: #ee1515;
+    --snow: #f0f0f0;
+    --white:#FFFF;
+    --black2:#1C1C1C;
+    --black: #222224;
+}
+
+.logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout li{
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
+
+header{
+    background-color: var(--red);
+    height: 17vh;
+    display: flex;
+    padding: 0 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modalLogin{
+    display: none;
+    position: absolute;
+    background-color: #000;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 400px;
+}
+
+header div ul{
+    display: flex;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.nav-bar{
+    display: none;
+    cursor: pointer;
+}
+
+.nav-bar div {
+    border-radius: 1px;
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: .4s;
+}
+
+
+.itens a{
+    margin: 0 .5rem;
+    margin-left: 7rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    height: 0.5px; 
+    margin-top: -0.78rem;
+    transition: all .5s;
+}
+
+
+.contas a{
+    font-size: 1.1rem;
+    margin: 0 .5rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+
+.main{
+    background-color: var(--black) !important;
+}
+
+.main h1{
+    text-align: center;
+    margin: 2.5rem 0.5rem;
+}
+
+.main p{
+    text-align: center;
+    margin-bottom: 0;
+    padding: 3rem;
+    font-size: 1.2rem;
+}
+
+.videoYtb{
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.pokeMain{
+    width: 3rem;
+    height: 3rem;
+}
+
+.text-key{
+    padding: 0.1rem 0;
+}
+
+#txt-animado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 45px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#txt-animado span{
+    position: relative;
+}
+
+#txt-animado span::before{
+    content: "";
+    color: var(--snow);
+    animation: palavras 30s infinite;
+}
+
+#txt-animado span::after{
+    content: '';
+    position: absolute;
+    margin-top: 0.8rem;
+    height: 75%;
+    border-left: 2px solid var(--red);
+    right: -10px;
+    animation: cursor 0.85s infinite,digita 30s steps(18) infinite;
+    width: calc(100% + 19px);
+    background-color: var(--black);
+}
+
+footer * {
+    color: var(--black) !important;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--snow);
+    position: relative;
+    padding: 1rem;
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+}
+
+footer p{
+    position: absolute;
+    font-size: 18px;
+    right: 45%;
+    top: 85%;
+    max-width: 40%;
+}
+
+#social-links{
+    display: flex;
+    flex-direction: column;
+    max-width: 8rem;
+}
+
+#social-links h2,#links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#social-links #links{
+    margin-top: 5px;
+    display: flex;
+    gap: 1rem;
+}
+
+
+#social-links li{
+    font-size: 25px;
+}
+
+/* ///////////Registro / Login */
+
+.imgGreninja{
+    background: url(/img/greninja.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+}
+
+.divRegistro{
+    height: 90vh;
+    margin-top: 2vh;
+}
+
+.divRegistro , .divLogin{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    padding: 2rem;
+    transform: translate(-50%,-50%);
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px var(--black);
+}
+
+.divRegistro h1{
+    text-align: center;
+}
+
+.formRegistro{
+    display: flex;
+    flex-direction: column;
+}
+
+.formRegistro label{
+    padding: .5rem 0;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.formRegistro input{
+    padding: .2rem .2rem;
+    letter-spacing: 1px;
+    outline: 0;
+    color: var(--black) !important;
+    font-size: 1rem;
+}
+
+.btnRegistro{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    width: 30vw;
+    margin-top: 3vh;
+}
+
+.btnRegistro button{
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    padding: .5rem 1.5rem;
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    border-radius: 20px 0 20px 0;
+}
+
+.btnRegistro .btnLogin{
+    background-color: rgb(0, 255, 0);
+}
+
+.btnRegistro .btnPinicial{
+    background-color: red;
+}
+
+
+.imgGreninja img{
+    height: 100vh;
+    width: 100vw;
+}
+
+.divLogin{
+    height: 65vh;
+}
+
+.divLogin h2{
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+}
+
+.formLogin{
+    display: flex;
+    flex-direction: column;
+}
+
+.formLogin label{
+    padding: .5rem 0;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.formLogin input{
+    padding: .2rem .2rem;
+    letter-spacing: 1px;
+    outline: 0;
+    color: var(--black) !important;
+    font-size: 1rem;
+}
+
+.divBtnEntrar{
+    margin-top: 12vh;
+    text-align: center;
+    width: 25vw;
+}
+
+.btnEntrar{
+    background-color: rgb(0, 255, 0);
+    position: absolute;
+    left: 37%;
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    font-weight: 600;
+    padding: .5rem 1.5rem;
+    letter-spacing: 1.5px;
+    border-radius: 50px 0 50px 0;
+}
+
+.CliqueAqui{
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    font-weight: 550;
+    margin-top: -1.5rem;
+    padding: 0 !important;
+}
+
+.CliqueAquiLogin{
+    position: absolute;
+    letter-spacing: 3px;
+    font-size: 1.1rem;
+    font-size: large;
+    margin-top: 8px;
+    font-weight: 550;
+    top: 100%;
+    left: 28%;
+}
+
+#pokeball{
+    position: absolute;
+    left: 2%;
+    top: 84%;
+}
+
+#pokeball img{
+    width: 80px;
+    height: 80px;
+}
+
+/* ///////////Acabou */
+
+#logout{
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    justify-content: center;
+}
+
+/* /////////////Pokedex */
+
+.pokedex{
+    min-height: 100vh;
+    height: 83vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: url(/img/pikachuW.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.pokedex h1{
+    color: var(--black) !important;
+    letter-spacing: 2px;
+}
+
+#pokedex{
+    display: inline-block;
+    position: relative;
+}
+
+#pokedex img{
+    width: 100%;
+    max-width: 300px;
+}
+
+.pokemon_image{
+    position: absolute;
+    bottom: 400px;
+    left: 200px;
+}
+
+#pokedex #pokemon{
+    height: 18%;
+    width: 27%;
+}
+
+.pokemon_image{
+    position: absolute;
+    bottom: 57%;
+    left: 50%;
+    height: 18%;
+    transform: translate(-63%,20%);
+}
+
+.pokemon_data{
+    font-size: clamp(8px,4.5vw,18px);
+    position: absolute;
+    font-weight: 600;
+    color: #00000092 !important;
+    top: 54.5%;
+    right: 23%;
+}
+
+.pokemon_name{
+    color: var(--black2) !important;
+    text-transform: capitalize;
+}
+
+.pokemon_number{
+    color: #00000092 !important;
+}
+
+.form{
+    position: absolute;
+    width: 72%;
+    top: 65%;
+    left: 11%;
+}
+
+.input_search{
+    width: 100%;
+    padding: 4%;
+    outline: none;
+    border: 2px solid var(--black) !important;
+    border-radius: 5px;
+    font-weight: 600;
+    color: var(--black2) !important;
+    font-size: clamp(12px,8vw,15px);
+    box-shadow: -2px 3px 0 #888 , -5px 6.5px 0 #333 !important;
+
+}
+
+.buttons{
+    position: absolute;
+    bottom: 10%;
+    width: 65%;
+    right: 57%;
+    transform: translate(57%);
+    display: flex;
+    gap: 20px;
+}
+
+.button{
+    width: 50%;
+    padding: 4%;
+    border: 2px solid var(--black) !important;
+    font-size: clamp(8px,5.5vw,15px);
+    font-weight: 600;
+    color: var(--white) !important;
+    background-color: #444 !important;
+    box-shadow: -2px 3px 0 #222, -4px 6px 0 #000 !important;
+}
+
+.button:active{
+    box-shadow: inset -4px 4px 0 #222 !important;
+    font-size: 13px;
+}
+
+.btnsLinks {
+    display: flex;
+    margin-top: 15px;
+    gap: 3rem;
+}
+
+.btnPInit{
+    color: #000 !important;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 100%;
+    padding: 1% 5%;
+    border-radius: 30px 0 30px 0;
+    border: none;
+    font-size: 1rem;
+}
+
+.btnPInit1{
+    background-color: red;
+}
+
+.btnPInit2{
+    background-color: rgb(0, 255, 0);
+}
+
+/* /////////////Acabou */
+
+/* /////////////////SOBRE MIM  */
+
+.sobreMim{
+    padding: 1rem;
+    display: flex;
+    background-color: var(--black);
+    gap: 10rem;
+}
+
+#fotoMinha h3{
+    text-align: center;
+}
+
+#fotoMinha{
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+
+#fotoMinha img{
+    border-radius: 50%;
+    width: 400px;
+}
+
+.textos{
+    justify-content: center;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+
+#sobreMimText{
+    display: flex;
+    flex-direction: column;
+}
+
+#sobreMimText p{
+    max-width: 50vw;
+    text-align: justify;
+}
+
+#txt-animado2{
+    font-size: 45px;
+    font-weight: 300;
+}
+
+#txt-animado2 span{
+    position: relative;
+}
+
+#txt-animado2 span::before{
+    content: '';
+    animation: palavras2 30s infinite linear;
+
+}
+
+#txt-animado2 span::after{
+    content: "";
+    height: 100%;
+    position: absolute;
+    border-left: 2px solid var(--snow);
+    animation: cursor2 .7s infinite, digita2 30s steps(50) infinite ;
+    right: -10px;
+    width: calc(100% + 15px);
+    background-color: var(--black);
+}
+
+@keyframes digita2 {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 15px);
+    }
+}
+
+@keyframes cursor2 {
+    0%{
+        border-left: 2px solid var(--black) ;
+    }
+}
+
+@keyframes palavras2{
+    0%,20%{
+        content: "Sou Desenvolvedor Web";
+    } 
+
+    21%,40%{
+        content: "I am Web Developer";
+    }
+
+    41%,60%{
+        content: "Back-end";
+    }
+
+    61%,80%{
+        content: "Front-end";
+    }
+
+    81%,100%{
+        content: "Full-Stack";
+    }
+}
+     
+
+/* /////////////////ACABOU  */
+
+/* ///////////////////Jogo */
+#all{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.game-board{
+    width: 100%;
+    height: 500px;
+    margin-top:-13px ;
+    position: relative;
+    border-bottom: 10px solid rgb(16, 143, 16);
+    overflow: hidden;
+    background: linear-gradient(#87ceeb,#e0f6ff);
+}
+
+.pikachu{
+    width: 150px;
+    position: absolute;
+    bottom: -12px;
+    user-select: none;
+}
+
+.jump{
+    animation: jump 500ms ease-out;
+}
+
+.piper{
+    position: absolute;
+    bottom: -12px;
+    width: 100px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.clouds{
+    margin-left: 5rem;
+    margin-top: 3rem;
+    position: absolute;
+    width: 520px;
+    animation: clouds 15s infinite linear;
+}
+
+.btnJ{
+    border: none;
+    cursor: pointer;
+    color: var(--white);
+    padding: .5rem 1.5rem;
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    border-radius: 20px 0 20px 0;
+}
+
+.btnsJogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 1.5rem;
+}
+
+.resetButton{
+    border: none;
+    padding: 0.5rem 2rem;
+    background-color: var(--black);
+    border-radius: 20px 0 20px 0;
+}
+
+@keyframes clouds{
+    from{
+        right: -35%;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -160px;
+    }
+    
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes jump{
+    0%{
+        bottom: -12px;
+    }
+
+    40%{
+        bottom: 150px;
+    }
+
+    50%{
+        bottom: 150px;
+    }
+
+    60%{
+        bottom: 150px;
+    }
+
+    100%{
+        bottom: 0;
+    }
+}
+
+/* /////////////Acabou */
+
+@keyframes palavras{
+    0%,25%{
+        content: "Pokemon!";
+    }
+
+    26%,50%{
+        content: 'Pokedex!';
+    }
+    
+    51%,75%{
+        content: 'Joguinho!';
+        
+    }
+    
+    76%,100%{
+        content: 'Sobre mim!';
+    }
+        
+}
+
+@keyframes cursor{
+    0%{
+    border-left: 2px solid var(--black);
+    }
+}
+
+@keyframes digita{
+    10%,15%,30%,35%,50%,55%,65%,75%,87%,90%,96%{
+        width: 0;
+    }
+
+    5%,20%,25%,40%,50%,70%,75%,82%,100%{
+        width: calc(100% + 19px);
+    }
+}
+
+
+@media (max-width: 600px){
+    .itens{
+        visibility: hidden;
+        opacity: 0;
+        background-color: var(--snow);
+        top: 17%;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+        padding: 1rem;
+        width: 100%;
+        transition: all 0.7s;
+    }
+
+    .itens.ativado{
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .acessos {
+        position: absolute;
+        margin: 0;
+        margin-top: 1rem;
+        left: 0;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        gap: 8rem;
+    }
+    
+    .acessos li{
+        color: var(--black2) !important;
+    }
+
+    .nav-bar{
+        display: block;
+        font-size: 40px;
+    }
+
+    .contas{
+        margin-top: 1rem;
+    }
+
+    .video{
+        width: 300px;
+        height: 200px;
+    }
+
+    .btnRegistro{
+        margin-top: 0.5rem;
+        gap: 0.2rem;
+    }
+
+    .btnRegistro .btnLogin{
+        margin-left: 3.5rem;
+    }
+
+    .piper{
+        animation: pipe-animation 1s infinite linear;
+    }
+    
+    .btnsJogo{
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    }
+
+    .divLogin {
+        height: 50vh;
+    }
+
+    .sair{
+        color: var(--black2) !important;
+    }
+
+    #pokeball img {
+        margin-top: 60px ;
+        margin-left: 10px ;
+        width: 40px;
+        height: 40px;
+    }
+
+    #social-links{
+        margin-top: 2rem;
+    }
+
+    footer p {
+        font-size: 18px;
+        right: 21%;
+        max-width: 70%;
+    }
+
+    .btnEntrar{
+    left: 30%;
+    }
+
+    .imgGreninja {
+    background-position: center right;
+    }
+
+    .divRegistro, .divLogin {
+        backdrop-filter: blur(2px);
+    }
+
+    .CliqueAquiLogin{
+        left: 15%;
+    }
+
+    #fotoMinha h3 {
+        margin-top: 2rem;
+    }
+
+    #fotoMinha img {
+        width: 300px;
+    }
+
+    .sobreMim {
+        flex-direction: column;
+    }
+
+    .textos h1{
+        text-align: center;
+    }
+
+    #fotoMinha{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #sobreMimText p {
+        max-width: 95vw;
+    }
+
+    .divRegistro{
+        height: 75vh;
+    }
+
+    .CliqueAqui {
+        letter-spacing: 0px;
+        position: absolute;
+        font-size: 1rem;
+        top: 80vh;
+        left: 0;
+    }
+
+    .btnPinicial{
+        position: absolute;
+        left: 13%;
+    }
+
+    .CliqueAqui p{
+        max-width: 100vh;
+        margin-bottom: 0;
+    }
+
+    .btnEntrar{
+        top: 80%;
+    }
+}

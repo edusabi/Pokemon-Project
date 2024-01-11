@@ -1,0 +1,41 @@
+<header>
+
+    <div class="logo">  <img src="/img/pokebolaLogo.png" alt=""></div>
+
+    <div class="nav-bar">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+
+
+
+
+<div class="itens">
+<ul class="acessos">
+
+        <a href="/pokedex" id="logado"><li>Pokédex</li></a>
+        <a href="/jogo" id="logado"><li>Jogo</li></a>
+        <a href="/sobremim" id="logado"><li>Sobre mim</li></a>
+  
+
+        <% if (user) { %>
+            <a href="/logout">
+                <div class="logout">
+                    <li id="logout">Sair</li>
+                    <i class="fa-solid fa-right-from-bracket sair"></i>
+                </div>
+            </a>
+            <% } else { %>
+                <a href="/criarConta"><li>Criar conta</li></a>
+                <a href="/login"><li>Login</li></a>
+            <% } %>
+</ul>
+
+</div>   
+
+</header>
+
+<script src="https://kit.fontawesome.com/c9ae848291.js" crossorigin="anonymous"></script>
+</body>
+</html>
