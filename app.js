@@ -27,7 +27,7 @@ app.use(flash())
 
 /////////passport
 app.use(passport.initialize())
-app.use(passport.session()) // Hm
+app.use(passport.session()) 
 
 const firebaseConfig = {
     apiKey: "AIzaSyA1PraygMwPYzkXdAcrU0OFFAfaGHsb2JA",
